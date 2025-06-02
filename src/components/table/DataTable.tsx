@@ -15,6 +15,8 @@ interface IDataTAble<T> {
   onBack: (page: number) => void;
   onForward: (page: number) => void;
   onSearch: (search: string) => void;
+  tableSize: number;
+  onChangeTableSize: (size: number) => void;
 }
 
 const DataTable = <T,>({
@@ -27,6 +29,8 @@ const DataTable = <T,>({
   onBack,
   onForward,
   onSearch,
+  tableSize,
+  onChangeTableSize
 }: IDataTAble<T>) => {
   return (
     <div className="w-full min-h-[86dvh] flex flex-col justify-between">
@@ -47,6 +51,8 @@ const DataTable = <T,>({
         currentPage={currentPage}
         onBack={onBack}
         onForward={onForward}
+        tableSize={tableSize}
+        onChangeTableSize={onChangeTableSize}
       />
     </div>
   );

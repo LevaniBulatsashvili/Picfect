@@ -1,20 +1,24 @@
 import { useState } from "react";
-import useFetchPhotos from "../../features/photos/hooks/useFetchPhotos";
+import useFetchOrSearchPhotos from "../../features/photos/hooks/useFetchPhotos";
 import PhotoTable from "../../features/photos/components/PhotoTable";
 
 const PhotosPage = () => {
-  const [search, setSearch] = useState("red");
+  const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
-  const { data, isLoading, error } = useFetchPhotos(search, page);
+  const [perPage, setPerPage] = useState(20);
+  const { data, isLoading, error } = useFetchOrSearchPhotos(
+    search,
+    page,
+    perPage
+  );
 
   const onBack = (page: number = 1) => setPage((prev) => prev - page);
   const onForward = (page: number = 1) => setPage((prev) => prev + page);
   const onSearch = (search: string) => {
-    if (search !== "") {
-      setSearch(search);
-      setPage(1);
-    }
+    setSearch(search);
+    if (search !== "") setPage(1);
   };
+  const onChangeTableSize = (size: number) => setPerPage(size);
 
   return (
     <PhotoTable
@@ -25,6 +29,8 @@ const PhotosPage = () => {
       onBack={onBack}
       onForward={onForward}
       onSearch={onSearch}
+      tableSize={perPage}
+      onChangeTableSize={onChangeTableSize}
     />
   );
 };

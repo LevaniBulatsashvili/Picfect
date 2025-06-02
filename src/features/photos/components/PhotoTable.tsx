@@ -10,6 +10,8 @@ interface IPhotoTable {
   onBack: (page: number) => void;
   onForward: (page: number) => void;
   onSearch: (search: string) => void;
+  tableSize: number;
+  onChangeTableSize: (size: number) => void;
 }
 
 const PhotoTable = ({
@@ -20,6 +22,8 @@ const PhotoTable = ({
   onBack,
   onForward,
   onSearch,
+  tableSize,
+  onChangeTableSize,
 }: IPhotoTable) => {
   return (
     <div className="border border-gray-200 rounded-2xl p-2 w-full">
@@ -33,6 +37,8 @@ const PhotoTable = ({
         onBack={onBack}
         onForward={onForward}
         onSearch={onSearch}
+        tableSize={tableSize}
+        onChangeTableSize={onChangeTableSize}
       />
     </div>
   );

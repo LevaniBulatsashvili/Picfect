@@ -5,12 +5,15 @@ import {
   ChevronRightIcon,
 } from "@heroicons/react/16/solid";
 import ArrowBtn from "./ArrowBtn";
+import TableSizeControl from "./TableSizeControl";
 
 interface IPagination {
   currentPage: number;
   allPages: number;
   onBack: (page: number) => void;
   onForward: (page: number) => void;
+  tableSize: number;
+  onChangeTableSize: (size: number) => void;
 }
 
 const Pagination = ({
@@ -18,9 +21,11 @@ const Pagination = ({
   allPages,
   onBack,
   onForward,
+  tableSize,
+  onChangeTableSize,
 }: IPagination) => {
   return (
-    <div className="flex justify-between items-center mt-2">
+    <div className="relative flex justify-between items-center mt-2">
       <div className="flex items-center justify-center grow">
         <ArrowBtn
           onClick={() => onBack(currentPage - 1)}
@@ -35,8 +40,9 @@ const Pagination = ({
           <ChevronLeftIcon className="w-5 h-5" />
         </ArrowBtn>
 
-        <span className="text-md text-gray-700  font-bold">
-          Page {currentPage} of {allPages}
+        <span className="text-md text-gray-700 font-bold font-mono text-center w-[150px]">
+          Page {String(currentPage).padStart(2, "0")} of{" "}
+          {String(allPages).padStart(2, "0")}
         </span>
 
         <ArrowBtn
@@ -59,6 +65,11 @@ const Pagination = ({
           <ChevronRightIcon className="w-6 h-6" />
         </ArrowBtn>
       </div>
+
+      <TableSizeControl
+        tableSize={tableSize}
+        onChangeTableSize={onChangeTableSize}
+      />
     </div>
   );
 };

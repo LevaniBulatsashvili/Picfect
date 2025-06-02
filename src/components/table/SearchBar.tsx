@@ -10,7 +10,7 @@ interface ISearchBar {
 export default function SearchBar({
   onSearch,
   disabled,
-  delay = 500,
+  delay = 700,
 }: ISearchBar) {
   const [inputValue, setInputValue] = useState("");
   const debouncedValue = useDebounce(inputValue, delay);

@@ -10,7 +10,7 @@ const PhotoCard = ({ photo }: IPhotoCard) => {
   return (
     <Link
       to={`${PAGE.PHOTOS}/${photo.id}`}
-      className="block bg-white rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-[1.03] hover:shadow-xl cursor-pointer duration-300 w-full max-w-sm"
+      className="block bg-white rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-[1.05] hover:shadow-xl cursor-pointer duration-300 w-full max-w-sm"
     >
       <img
         src={photo.urls.small}
