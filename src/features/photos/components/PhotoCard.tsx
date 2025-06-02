@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import type { IPhoto } from "../interfaces/photo.interface";
+import type { IPhoto } from "../../../interfaces/photo.interface";
 import { PAGE } from "../../../pages/pageConfig";
 
 interface IPhotoCard {

@@ -1,4 +1,4 @@
-import type { IPhotoSearchRes } from "../interfaces/photo.interface";
+import type { IPhotoSearchRes } from "../../../interfaces/photo.interface";
 import DataTable from "../../../components/table/DataTable";
 import PhotoCard from "./PhotoCard";
 

@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import Query_Keys from "../../../react-query/query-keys";
 import fetchPhotos from "../api/fetchPhotos";
-import type { IPhotoSearchRes } from "../interfaces/photo.interface";
+import type { IPhotoSearchRes } from "../../../interfaces/photo.interface";
 
 const useFetchPhotos = (
   search: string = " ",

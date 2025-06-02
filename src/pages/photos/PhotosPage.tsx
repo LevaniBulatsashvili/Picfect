@@ -1,6 +1,6 @@
 import { useState } from "react";
-import useFetchPhotos from "../../features/photo/hooks/useFetchPhotos";
-import PhotoTable from "../../features/photo/components/PhotoTable";
+import useFetchPhotos from "../../features/photos/hooks/useFetchPhotos";
+import PhotoTable from "../../features/photos/components/PhotoTable";
 
 const PhotosPage = () => {
   const [search, setSearch] = useState("red");
