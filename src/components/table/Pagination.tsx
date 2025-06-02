@@ -1,0 +1,66 @@
+import {
+  ChevronDoubleLeftIcon,
+  ChevronDoubleRightIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from "@heroicons/react/16/solid";
+import ArrowBtn from "./ArrowBtn";
+
+interface IPagination {
+  currentPage: number;
+  allPages: number;
+  onBack: (page: number) => void;
+  onForward: (page: number) => void;
+}
+
+const Pagination = ({
+  currentPage,
+  allPages,
+  onBack,
+  onForward,
+}: IPagination) => {
+  return (
+    <div className="flex justify-between items-center mt-2">
+      <div className="flex items-center justify-center grow">
+        <ArrowBtn
+          onClick={() => onBack(currentPage - 1)}
+          disabled={currentPage <= 1}
+        >
+          <ChevronLeftIcon className="w-6 h-6" />
+        </ArrowBtn>
+        <ArrowBtn onClick={() => onBack(10)} disabled={currentPage <= 10}>
+          <ChevronDoubleLeftIcon className="w-5 h-5" />
+        </ArrowBtn>
+        <ArrowBtn onClick={() => onBack(1)} disabled={currentPage <= 1}>
+          <ChevronLeftIcon className="w-5 h-5" />
+        </ArrowBtn>
+
+        <span className="text-md text-gray-700  font-bold">
+          Page {currentPage} of {allPages}
+        </span>
+
+        <ArrowBtn
+          onClick={() => onForward(1)}
+          disabled={currentPage >= allPages}
+        >
+          <ChevronRightIcon className="w-5 h-5" />
+        </ArrowBtn>
+
+        <ArrowBtn
+          onClick={() => onForward(10)}
+          disabled={currentPage > allPages - 9}
+        >
+          <ChevronDoubleRightIcon className="w-5 h-5" />
+        </ArrowBtn>
+        <ArrowBtn
+          onClick={() => onForward(allPages - currentPage)}
+          disabled={currentPage >= allPages}
+        >
+          <ChevronRightIcon className="w-6 h-6" />
+        </ArrowBtn>
+      </div>
+    </div>
+  );
+};
+
+export default Pagination;
