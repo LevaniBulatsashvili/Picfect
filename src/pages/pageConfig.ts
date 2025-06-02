@@ -1,6 +1,6 @@
 const PAGE = {
   BASE: "/",
-  DETAILS: "/details",
+  PHOTOS: "/photos",
 };
 
 export { PAGE };

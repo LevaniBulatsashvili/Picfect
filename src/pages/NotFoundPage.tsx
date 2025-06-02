@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { PAGE } from "./pageConfig";
 
-const ErrorPage = () => {
+const NotFoundPage = () => {
   return (
     <div>
       <h1>404 - Page Not Found</h1>
@@ -10,4 +10,4 @@ const ErrorPage = () => {
   );
 };
 
-export default ErrorPage;
+export default NotFoundPage;

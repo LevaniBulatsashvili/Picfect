@@ -1,10 +1,5 @@
 @import "tailwindcss";
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@plugin 'tailwind-scrollbar';
 
 #html {
   min-height: 100dvh;
@@ -14,16 +9,7 @@ ul {
   list-style-type: none;
 }
 
-a {
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-  font-weight: normal;
-  background: none;
-}
-
+a,
 button {
   cursor: pointer;
-  background: none;
-  border: none;
 }
