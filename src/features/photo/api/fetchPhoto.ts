@@ -1,5 +1,5 @@
-import { REQUEST } from "../../apiConfig";
-import $apiAxios from "../../http/apiAxios";
+import { REQUEST } from "../../../apiConfig";
+import $apiAxios from "../../../http/apiAxios";
 
 const fetchPhoto = async (id: string) => {
   const res = await $apiAxios.get(`${REQUEST.PHOTO}/${id}`);
