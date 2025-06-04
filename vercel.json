@@ -1,0 +1,8 @@
+{
+  "revrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

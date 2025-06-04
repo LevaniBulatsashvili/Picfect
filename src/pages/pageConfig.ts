@@ -1,6 +1,7 @@
 const PAGE = {
   BASE: "/",
-  DETAILS: "/details",
+  PHOTOS: "/photos",
+  NOT_FOUND: "/*",
 };
 
 export { PAGE };
