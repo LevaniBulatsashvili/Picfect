@@ -1,9 +1,10 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { PAGE } from "./pages/pageConfig";
-import PhotosPage from "./pages/photos/PhotosPage";
-import PhotoPage from "./pages/photos/PhotoPage";
-import NotFoundPage from "./pages/NotFoundPage";
+import { lazy } from "react";
 import MainLayout from "./layouts/MainLayout";
+const PhotosPage = lazy(() => import("./pages/photos/PhotosPage"));
+const PhotoPage = lazy(() => import("./pages/photos/PhotoPage"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 const AppRouter = () => {
   return (

@@ -1,10 +1,12 @@
 interface ITableSizeControl {
   tableSize: number;
+  sizeSettings: number[];
   onChangeTableSize: (size: number) => void;
 }
 
 const TableSizeControl = ({
   tableSize,
+  sizeSettings,
   onChangeTableSize,
 }: ITableSizeControl) => {
   return (
@@ -16,7 +18,7 @@ const TableSizeControl = ({
           value={tableSize}
           onChange={(e) => onChangeTableSize(Number(e.target.value))}
         >
-          {[10, 20, 30].map((size) => (
+          {sizeSettings.map((size) => (
             <option key={size} value={size}>
               {size}
             </option>

@@ -68,6 +68,7 @@ const Pagination = ({
 
       <TableSizeControl
         tableSize={tableSize}
+        sizeSettings={[10, 20, 30]}
         onChangeTableSize={onChangeTableSize}
       />
     </div>

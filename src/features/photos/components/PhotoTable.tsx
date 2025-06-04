@@ -5,10 +5,10 @@ import PhotoCard from "./PhotoCard";
 interface IPhotoTable {
   data: IPhotoSearchRes | undefined;
   loading: boolean;
-  error: Error | null;
   currentPage: number;
   onBack: (page: number) => void;
   onForward: (page: number) => void;
+  searchVal?: string;
   onSearch: (search: string) => void;
   tableSize: number;
   onChangeTableSize: (size: number) => void;
@@ -17,10 +17,10 @@ interface IPhotoTable {
 const PhotoTable = ({
   data,
   loading,
-  error,
   currentPage,
   onBack,
   onForward,
+  searchVal,
   onSearch,
   tableSize,
   onChangeTableSize,
@@ -30,12 +30,12 @@ const PhotoTable = ({
       <DataTable
         data={data?.results || []}
         loading={loading}
-        error={error}
         currentPage={currentPage}
         allPages={data?.total_pages || 0}
         renderItem={(photo) => <PhotoCard photo={photo} />}
         onBack={onBack}
         onForward={onForward}
+        searchVal={searchVal}
         onSearch={onSearch}
         tableSize={tableSize}
         onChangeTableSize={onChangeTableSize}

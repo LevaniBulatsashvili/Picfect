@@ -2,17 +2,19 @@ import { useEffect, useState } from "react";
 import { useDebounce } from "../../hooks/useDebounce";
 
 interface ISearchBar {
+  searchVal?: string;
   onSearch: (query: string) => void;
   disabled: boolean;
   delay?: number;
 }
 
 export default function SearchBar({
+  searchVal,
   onSearch,
   disabled,
   delay = 700,
 }: ISearchBar) {
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState(searchVal || "");
   const debouncedValue = useDebounce(inputValue, delay);
 
   useEffect(() => {
